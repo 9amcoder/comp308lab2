@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/newstyle.css">
+<title> Login </title>
+</head>
+<body>
+  <body>
+      
+	<!-- If a user is authenticated, display the user's full name , otherwise display the authentication links -->
+	<% if ( userFullName ) { %>
+		<h2>Hello <%=userFullName%> </h2> 
+        
+		<a href="/signout">Sign out</a>
+        
+	<% } else { %>
+        <div class="wrapper">
+            <form class="form">
+              <h3>Please select:  </h3>
+              <br>
+              <h4><a href="/signin">Login as student</a></h4>
+              <br>
+              <h4><a href="/signup">Signup as student</a></h4>
+              <br>
+              <a href="/students">Dispaly all students</a>
+              <br>
+              <a>Display Comment by student </a>
+            </form>
+          </div>
+    <% } %>
+</form>
+</body>
+</body>
+</html>
