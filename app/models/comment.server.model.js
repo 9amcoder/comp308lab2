@@ -1,6 +1,5 @@
 // Load the Mongoose module and Schema object
 const mongoose = require('mongoose');
-const crypto = require('crypto');
 const Schema = mongoose.Schema;
 
 //define a new CommentSchema
@@ -19,6 +18,12 @@ const CommentSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }
+});
+
+// Configure the 'UserSchema' to use getters and virtuals when transforming to JSON
+CommentSchema.set('toJSON', {
+	getters: true,
+	virtuals: true
 });
 //
 mongoose.model('Comment', CommentSchema);

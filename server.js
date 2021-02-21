@@ -19,6 +19,7 @@ const passport = configurePassport();
 // Use the Express application instance to listen to the '4040' port
 app.listen(4040);
 
+
 // Log the server status to the console
 console.log('Server running at http://localhost:4040/');
 
