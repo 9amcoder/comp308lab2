@@ -8,76 +8,74 @@
 
 </head>
 <body>
-    <!-- Load the static image file  -->
-    <img src="img/logo.png" alt="Logo">
-    <h2> List of Students</h2>
+    <h2> List of comment by student </h2>
     <table class="center">
         <tr>
             <td>
                 <div>
-                    <label>First Name</label>
+                    <label>courseCode</label>
                 </div>
 
             </td>
             <td>
 
                 <div>
-                    <label>Last Name</label>
+                    <label>courseName</label>
 
                 </div>
 
             </td>
             <td>
                 <div>
-                    <label>Email</label>
+                    <label>program</label>
                 </div>
             </td>
             <td>
                 <div>
-                    <label>User Name</label>
+                    <label>semester</label>
                 </div>
 
             </td>
             
             <td>
                 <div>
-                    <label>Created </label>
+                    <label>comment </label>
                 </div>
 
             </td>
         </tr>
 
 
-        <% users.forEach(function(user){ %>
+        <% comments.forEach(function(comment){ %>
 
         <tr>
             <td>
                 <div>
 
-                    <input type="text" name="firstname" value="<%= user.firstName %>" />
+                    <input type="text" name="firstname" value="<%= comment.courseCode %>" />
                 </div>
 
             </td>
             <td>
                 <div>
-                    <input type="text" name="lastname" value="<%= user.lastName %>" />
+                    <input type="text" name="lastname" value="<%= comment.courseName %>" />
                 </div>
 
             </td>
             <td>
                 <div>
-                    <input type="text" name="email" value="<%= user.email %>" />
+                    <input type="text" name="email" value="<%= comment.program %>" />
                 </div>
             </td>
             <td>
                 <div>
-                    <input type="text" name="username" value="<%= user.username %>" />
+                    <input type="text" name="username" value="<%= comment.semester %>" />
                 </div>
             </td>
 
             <td>
                 <div>
-                    <input type="text" name="created" value="<%= user.created %>" />
+                    <input type="text" name="created" value="<%= comment.comment %>" />
                 </div>
             </td>
             

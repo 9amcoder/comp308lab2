@@ -11,7 +11,8 @@
 	<!-- If a user is authenticated, display the user's full name , otherwise display the authentication links -->
 	<% if ( userFullName ) { %>
 		<h2>Hello <%=userFullName%> </h2> 
-        
+    <a href="/submit_comment">Submit A Commit</a>
+    <br>    
 		<a href="/signout">Sign out</a>
         
 	<% } else { %>
@@ -23,9 +24,10 @@
               <br>
               <h4><a href="/signup">Signup as student</a></h4>
               <br>
-              <a href="/students">Dispaly all students</a>
+              <h4><a href="/students">Dispaly all students</a></h4>
               <br>
-              <a>Display Comment by student </a>
+              <h4><a href="/comments">Display Comment by student </a></h4>
+              <br>
             </form>
           </div>
     <% } %>

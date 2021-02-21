@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/submitcomment.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <form class="form" action="/submit_comment" method="post">
+      <div class="pageTitle title">Comment Page: </div>
+      <div class="secondaryTitle title">Hello <%=userFullName%> </div>
+      <div class="secondaryTitle title">Please fill this form to comment.</div>
+      <input type="text" class="name formEntry" placeholder="Course Code" name="coursecode" />
+      <input type="text" class="name formEntry" placeholder="Course Name" name="coursename"/>
+      <input type="text" class="name formEntry" placeholder="Program" name="program"/>
+      <input type="text" class="name formEntry" placeholder="Semester" name="semester"/>
+      <textarea class="message formEntry" placeholder="Comments" name="comment"></textarea>
+      <button class="submit formEntry" type="submit" >Submit</button>
+      <br>
+      <h5><a href="/">Home page</a></h5>
+    </form>
+  </div>
+</body>
+
+</html>
