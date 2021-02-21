@@ -11,9 +11,11 @@
 	<!-- If a user is authenticated, display the user's full name , otherwise display the authentication links -->
 	<% if ( userFullName ) { %>
 		<h2>Hello <%=userFullName%> </h2> 
-    <a href="/submit_comment">Submit A Commit</a>
-    <br>    
-		<a href="/signout">Sign out</a>
+    <h5><a href="/submit_comment">Submit A Commit</a></h5>
+    <br> 
+    <h5><a href="/comments">Find a comment by email</a></h5>
+    <br>   
+		<h5><a href="/signout">Sign out</a></h5>
         
 	<% } else { %>
         <div class="wrapper">

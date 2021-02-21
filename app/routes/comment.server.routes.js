@@ -7,15 +7,9 @@ module.exports = function (app) {
             .post(comments.saveComment);
         app.route('/thankyou')
             .get(comments.renderTankyou);
-        app.route('/comments:id')
-             .get(comments.commentsByStudent);
-        //     .post(passport.authenticate('local', {
-        //         successRedirect: '/',
-        //         failureRedirect: '/signin',
-        //         failureFlash: true
-        //     }));
-        // app.get('/signout', users.signout);
-    
-        // app.get('/students',users.display);
-    
-    };
+        
+        app.route('/comments')
+             .get(comments.viewAllComments)
+             
+        
+};

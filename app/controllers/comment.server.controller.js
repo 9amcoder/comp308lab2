@@ -57,28 +57,29 @@ exports.renderTankyou = function (req, res, next){
 		return res.redirect('/signin');
 	} 
 }
+exports.renderComments = function (req, res, next){
+    let session = req.session;
+    res.render('comments', {
+        title: 'Welcome to comments Page',
+        error: false,
+        session: session,
+        error_msg: ''
+    });
+}
 
-exports.commentsByStudent = function (req, res, next) {
-    var email = req.session.email;
-    //find the student then its comments using Promise mechanism of Mongoose
-    User.findOne({ email: email }, (err, user) => {
-            if (err) { return getErrorMessage(err); }
-            //
-            req.id = user._id;
-            console.log(req.id);
-        }).then(function () {
-            //find the posts from this author
-            Comment.
-                find({
-                    user: req.id
-                }, (err, comments) => {
-                    if (err) { return getErrorMessage(err); }
-                    //res.json(comments);
-                    res.render('comments', {
-                        title: "Comments by student",
-                        comments: comments, 
-                        email: email
-                    });
-                });
-        });
-};
+
+//display student by email
+exports.viewAllComments = function (req, res) {
+    const userSession = req.session.user;
+    // Use the 'response' object to render the 'read_user' view with a 'title' property
+    Comment.find({}, (err, obj) => {
+      console.log(obj);
+      res.render("comments", {
+        title: "Read user by username",
+        email: userSession?.email || "User Not Logged in.",
+        comments: obj,
+      });
+    });
+  
+    // const userSession = req.session.user;
+  };
