@@ -5,15 +5,15 @@ module.exports = function (app) {
         .get(users.renderSignup)
         .post(users.signup);
     
-        app.route('/signin')
+    app.route('/signin')
         .get(users.renderSignin)
         .post(passport.authenticate('local', {
-            successRedirect: '/',
+            successRedirect: '/signin',
             failureRedirect: '/signin',
             failureFlash: true
         }));
     app.get('/signout', users.signout);
 
-    app.get('/students',users.display)
+    app.get('/students',users.display);
 
 };
