@@ -57,6 +57,8 @@ exports.renderTankyou = function (req, res, next){
 		return res.redirect('/signin');
 	} 
 }
+
+//render comment page
 exports.renderComments = function (req, res, next){
     let session = req.session;
     res.render('comments', {
@@ -68,7 +70,7 @@ exports.renderComments = function (req, res, next){
 }
 
 
-//display student by email
+//display student by email 
 exports.viewAllComments = function (req, res) {
     const userSession = req.session.user;
     // Use the 'response' object to render the 'read_user' view with a 'title' property
